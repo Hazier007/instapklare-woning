@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+import PropertyFilter from '../components/PropertyFilter.astro';
+import { Home, ArrowUpRight } from 'lucide-astro';
+
+// Normally this would come from a database
+const properties = [
+  {
+    image: 'https://picsum.photos/800/600',
+    price: 350000,
+    location: 'Antwerpen',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 150
+  },
+  {
+    image: 'https://picsum.photos/800/601',
+    price: 275000,
+    location: 'Gent',
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 120
+  },
+  {
+    image: 'https://picsum.photos/800/602',
+    price: 425000,
+    location: 'Brussel',
+    bedrooms: 4,
+    bathrooms: 2,
+    area: 180
+  },
+  {
+    image: 'https://picsum.photos/800/603',
+    price: 299000,
+    location: 'Leuven',
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 110
+  },
+  {
+    image: 'https://picsum.photos/800/604',
+    price: 495000,
+    location: 'Brugge',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 200
+  },
+  {
+    image: 'https://picsum.photos/800/605',
+    price: 325000,
+    location: 'Hasselt',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 140
+  }
+];
+---
+
+<Layout title="Woningen - InstapklareWoning.be">
+  <Header />
+  <main class="container mx-auto px-4 py-8">
+    <div class="flex items-center gap-2 text-gray-600 mb-4">
+      <Home size={20} />
+      <span>Woningen</span>
+      <ArrowUpRight size={20} />
+    </div>
+
+    <h1 class="text-4xl font-bold mb-8">Beschikbare Instapklare Woningen</h1>
+    
+    <PropertyFilter />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {properties.map((property) => (
+        <div class="transform hover:scale-105 transition-transform duration-300">
+          <PropertyCard {...property} />
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">Bent u op zoek naar uw droomhuis?</p>
+      <a 
+        href="/contact" 
+        class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Neem Contact Op
+      </a>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .transform {
+    will-change: transform;
+  }
+</style>

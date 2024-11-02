@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+
+const featuredProperties = [
+  {
+    image: 'https://picsum.photos/800/600',
+    price: 350000,
+    location: 'Antwerpen',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 150
+  },
+  {
+    image: 'https://picsum.photos/800/601',
+    price: 275000,
+    location: 'Gent',
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 120
+  },
+  {
+    image: 'https://picsum.photos/800/602',
+    price: 425000,
+    location: 'Brussel',
+    bedrooms: 4,
+    bathrooms: 2,
+    area: 180
+  }
+];
+---
+
+<Layout title="InstapklareWoning.be - Leadgeneratie Platform voor Makelaars">
+  <Header />
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Ontdek Instapklare Woningen</h1>
+    <p class="text-xl mb-8">Vind uw droomhuis dat direct klaar is om in te trekken!</p>
+    
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuredProperties.map(property => (
+        <PropertyCard {...property} />
+      ))}
+    </section>
+
+    <div class="mt-12 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Bent u makelaar?</h2>
+      <p class="mb-4">Presenteer uw instapklare woningen op ons platform en bereik meer potentiële kopers.</p>
+      <a href="/voor-makelaars" class="bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600">Meer informatie</a>
+    </div>
+  </main>
+  <Footer />
+</Layout>

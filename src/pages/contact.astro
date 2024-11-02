@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { MapPin, Phone, Mail, Clock, MessageSquare } from 'lucide-astro';
+
+const contactInfo = [
+  {
+    icon: MapPin,
+    title: 'Adres',
+    content: 'Hoofdstraat 123, 2000 Antwerpen'
+  },
+  {
+    icon: Phone,
+    title: 'Telefoon',
+    content: '+32 (0)3 123 45 67'
+  },
+  {
+    icon: Mail,
+    title: 'E-mail',
+    content: 'info@instapklarewoning.be'
+  },
+  {
+    icon: Clock,
+    title: 'Openingsuren',
+    content: 'Ma-Vr: 9:00-17:00'
+  }
+];
+---
+
+<Layout title="Contact - InstapklareWoning.be">
+  <Header />
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold mb-4">Neem Contact Op</h1>
+        <p class="text-xl text-gray-600">Heeft u vragen? Wij helpen u graag verder!</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="space-y-8">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="flex items-center gap-3 text-blue-600 mb-6">
+              <MessageSquare size={28} />
+              <h2 class="text-2xl font-semibold">Stuur ons een bericht</h2>
+            </div>
+            <LeadForm />
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-semibold mb-6">Contactgegevens</h2>
+            <div class="space-y-6">
+              {contactInfo.map(({ icon: Icon, title, content }) => (
+                <div class="flex items-start gap-4">
+                  <div class="text-blue-600 mt-1">
+                    <Icon size={24} />
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">{title}</h3>
+                    <p class="text-gray-600">{content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-semibold mb-6">Veelgestelde Vragen</h2>
+            <div class="space-y-4">
+              <details class="group">
+                <summary class="flex justify-between items-center cursor-pointer list-none p-4 bg-gray-50 rounded-lg hover:bg-gray-100">
+                  <span class="font-medium">Hoe werkt het leadgeneratie platform?</span>
+                  <span class="transform group-open:rotate-180 transition-transform">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="p-4 text-gray-600">
+                  Ons platform verbindt potentiële kopers met makelaars die instapklare woningen aanbieden. Makelaars kunnen hun woningen presenteren en leads ontvangen van geïnteresseerde kopers.
+                </div>
+              </details>
+              <details class="group">
+                <summary class="flex justify-between items-center cursor-pointer list-none p-4 bg-gray-50 rounded-lg hover:bg-gray-100">
+                  <span class="font-medium">Wat zijn de kosten voor makelaars?</span>
+                  <span class="transform group-open:rotate-180 transition-transform">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="p-4 text-gray-600">
+                  Neem contact met ons op voor een persoonlijk gesprek over onze tarieven en mogelijkheden. We bieden verschillende pakketten aan die aansluiten bij uw behoeften.
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style></content>

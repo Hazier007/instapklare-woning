@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AgentRegistrationForm from '../components/AgentRegistrationForm.astro';
+import { Users, Target, LayoutDashboard, Award, ClipboardCheck, UserCheck, Upload, Mail } from 'lucide-astro';
+---
+
+<Layout title="Voor Makelaars - InstapklareWoning.be">
+  <Header />
+  <div class="relative bg-gradient-to-b from-blue-600 to-blue-800 text-white py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#4f46e5,#0ea5e9)] opacity-75"></div>
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
+      <div class="h-[500px] w-[500px] absolute -top-32 -left-32 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+      <div class="h-[500px] w-[500px] absolute -bottom-32 -right-32 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold mb-6 relative animate-fade-in">Word Partner Makelaar</h1>
+      <p class="text-xl text-blue-100 max-w-2xl mx-auto relative animate-fade-in animation-delay-300">
+        Sluit u aan bij het toonaangevende platform voor instapklare woningen in België
+        en bereik meer potentiële kopers.
+      </p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 -mt-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-xl shadow-xl p-8 mb-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">Waarom InstapklareWoning.be?</h2>
+        <div class="grid md:grid-cols-2 gap-8 animate-cards">
+          <div class="bg-blue-50 p-6 rounded-lg transform transition hover:scale-105">
+            <div class="text-blue-600 mb-4"><Users size={32} /></div>
+            <h3 class="text-xl font-semibold mb-3 text-blue-800">Meer Zichtbaarheid</h3>
+            <p class="text-gray-600">Bereik een groter publiek van potentiële kopers die specifiek op zoek zijn naar instapklare woningen.</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg transform transition hover:scale-105">
+            <div class="text-blue-600 mb-4"><Target size={32} /></div>
+            <h3 class="text-xl font-semibold mb-3 text-blue-800">Gerichte Leads</h3>
+            <p class="text-gray-600">Ontvang kwalitatieve leads van geïnteresseerde kopers die passen bij uw aanbod.</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg transform transition hover:scale-105">
+            <div class="text-blue-600 mb-4"><LayoutDashboard size={32} /></div>
+            <h3 class="text-xl font-semibold mb-3 text-blue-800">Uitgebreide Dashboard</h3>
+            <p class="text-gray-600">Beheer uw listings en leads eenvoudig via ons gebruiksvriendelijke dashboard.</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg transform transition hover:scale-105">
+            <div class="text-blue-600 mb-4"><Award size={32} /></div>
+            <h3 class="text-xl font-semibold mb-3 text-blue-800">Professionele Uitstraling</h3>
+            <p class="text-gray-600">Presenteer uw woningen op een moderne en professionele manier aan potentiële kopers.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold mb-8 text-center text-blue-800">In 4 Simpele Stappen</h2>
+        <div class="max-w-3xl mx-auto">
+          <div class="relative">
+            <div class="absolute left-8 top-0 h-full w-0.5 bg-blue-200 hidden md:block"></div>
+            <ol class="space-y-8 relative">
+              <li class="flex items-start">
+                <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mr-4 text-xl font-bold relative z-10">1</span>
+                <div class="bg-white p-6 rounded-lg shadow-md flex-grow group hover:shadow-lg transition-all duration-300">
+                  <h3 class="font-semibold text-xl mb-2">Registreer als Makelaar</h3>
+                  <div class="text-blue-600 mb-2"><ClipboardCheck size={24} /></div>
+                  <p class="text-gray-600">Vul het registratieformulier in met uw bedrijfsgegevens</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mr-4 text-xl font-bold relative z-10">2</span>
+                <div class="bg-white p-6 rounded-lg shadow-md flex-grow group hover:shadow-lg transition-all duration-300">
+                  <h3 class="font-semibold text-xl mb-2">Account Activatie</h3>
+                  <div class="text-blue-600 mb-2"><UserCheck size={24} /></div>
+                  <p class="text-gray-600">Wij nemen contact op om uw account te verifiëren en activeren</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mr-4 text-xl font-bold relative z-10">3</span>
+                <div class="bg-white p-6 rounded-lg shadow-md flex-grow group hover:shadow-lg transition-all duration-300">
+                  <h3 class="font-semibold text-xl mb-2">Upload Woningen</h3>
+                  <div class="text-blue-600 mb-2"><Upload size={24} /></div>
+                  <p class="text-gray-600">Plaats uw instapklare woningen via het gebruiksvriendelijke dashboard</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mr-4 text-xl font-bold relative z-10">4</span>
+                <div class="bg-white p-6 rounded-lg shadow-md flex-grow group hover:shadow-lg transition-all duration-300">
+                  <h3 class="font-semibold text-xl mb-2">Ontvang Leads</h3>
+                  <div class="text-blue-600 mb-2"><Mail size={24} /></div>
+                  <p class="text-gray-600">Start met het ontvangen van gekwalificeerde leads van geïnteresseerde kopers</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-xl p-8">
+        <h2 class="text-3xl font-bold mb-8 text-center">Start Vandaag Nog</h2>
+        <AgentRegistrationForm />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

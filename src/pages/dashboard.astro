@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Hier zou je normaal data ophalen uit een database
+const listedProperties = [
+  { id: 1, address: 'Kerkstraat 1, Antwerpen', price: 350000 },
+  { id: 2, address: 'Stationsweg 5, Gent', price: 275000 },
+];
+
+const leads = [
+  { id: 1, name: 'Jan Janssen', email: 'jan@example.com', date: '2024-11-01' },
+  { id: 2, name: 'Piet Pietersen', email: 'piet@example.com', date: '2024-11-02' },
+];
+---
+
+<Layout title="Makelaarsdashboard - InstapklareWoning.be">
+  <Header />
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Makelaarsdashboard</h1>
+    
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Mijn Woningen</h2>
+      <ul class="bg-white shadow rounded-lg divide-y">
+        {listedProperties.map(property => (
+          <li class="p-4 flex justify-between items-center">
+            <span>{property.address}</span>
+            <span class="font-semibold">€{property.price.toLocaleString()}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Recente Leads</h2>
+      <ul class="bg-white shadow rounded-lg divide-y">
+        {leads.map(lead => (
+          <li class="p-4 flex justify-between items-center">
+            <span>{lead.name}</span>
+            <span>{lead.email}</span>
+            <span>{lead.date}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>
